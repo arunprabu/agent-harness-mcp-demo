@@ -6,8 +6,8 @@ Course material for building AI agents with LangChain and LangGraph, wrapping th
 
 | Project | What it covers | Start here |
 |---|---|---|
-| [`langchain_examples/`](langchain_examples/) | A first LangChain agent: `create_agent()` with tools loaded from an MCP server | `weather_agent.py` |
-| [`langgraph_examples/`](langgraph_examples/) | LangGraph from scratch in 7 steps: state, nodes, routing, loops, tool calling, human-in-the-loop | `src/ex1_hello_world.py` |
+| [`langchain_examples/`](langchain_examples/) | A first LangChain agent: `create_agent()` with tools loaded from an MCP server | [README](langchain_examples/README.md) |
+| [`langgraph_examples/`](langgraph_examples/) | LangGraph from scratch in 7 steps: state, nodes, routing, loops, tool calling, human-in-the-loop | [README](langgraph_examples/README.md) |
 | [`harness-demos/`](harness-demos/) | One harness concept per script (context, lifecycle, tools, retries, guardrails, tracing), then all of them combined | [README](harness-demos/README.md) |
 | [`my_mcp_server/`](my_mcp_server/) | An MCP server protected by an API key, LangChain and LangGraph clients for it, and guides on auth, OAuth and AWS deployment | [README](my_mcp_server/README.md) |
 
@@ -54,7 +54,7 @@ uv downloads the pinned Python version (`.python-version`) if it isn't on the ma
 |---|---|
 | `OPENAI_API_KEY` | All projects |
 | `TAVILY_API_KEY` | `langgraph_examples` (ex6), `harness-demos` (optional) |
-| `MCP_API_KEY` | `my_mcp_server` (server and both clients; the values must match) |
+| `MCP_API_KEY` | `my_mcp_server` (server and both clients) and `langchain_examples`; the values must match |
 | `USERS_API_TOKEN` | `my_mcp_server/mcp_server` |
 | `LANGSMITH_*` | Optional tracing in `langgraph_examples` and `harness-demos` |
 
@@ -67,7 +67,7 @@ cd langchain_examples
 uv run weather_agent.py
 ```
 
-It loads its tools from an MCP server at `http://127.0.0.1:8100/mcp`, so start one there first. (The server in `my_mcp_server` listens on port 9001.)
+It loads its tools from the server in `my_mcp_server`, so start that first (see [my_mcp_server](#my_mcp_server) below).
 
 ### langgraph_examples
 

@@ -48,9 +48,10 @@ No key? The demos fall back to a fake rule-based LLM (`offline_llm.py`) with can
 | 07 | `07_logging_tracing.py` | Structured logging & execution tracing | JSON logs with `trace_id`, per-node/tool spans, timeline view, `trace.jsonl` export. |
 | 08 | `08_mini_harness.py` | **Everything combined** | "Campus Helper" harness: all of the above in ~300 lines. |
 
-Run them in order:
+Run them in order, from `src/`:
 
 ```bash
+cd src
 uv run 00_plain_agent.py
 uv run 01_harness_vs_agent.py
 uv run 02_context_session_io.py
@@ -89,7 +90,7 @@ Demos 01–08 also save a picture of their graph to `diagrams/<demo>.png` (via `
 - Tested with `langgraph 1.2`, `langchain-core 1.7`, Python 3.11+. Dependencies are declared in `pyproject.toml` and pinned in `uv.lock`; commit both so every student gets identical versions.
 - To bump dependencies before a new batch: `uv lock --upgrade && uv sync`, then re-run the demos.
 - Before class, check that the network allows `api.openai.com`, `api.open-meteo.com` and `geocoding-api.open-meteo.com`. If many trainees share one key, expect occasional rate-limit (429) errors.
-- With a real LLM the wording of answers changes from run to run, but the harness behaviour is the same. If the API is blocked, run without a key (`OPENAI_API_KEY= uv run <demo>.py`) to get the fake LLM's canned answers.
+- With a real LLM the wording of answers changes from run to run, but the harness behaviour is the same. If the API is blocked, run without a key (`OPENAI_API_KEY= uv run <demo>.py` from `src/`) to get the fake LLM's canned answers.
 - The demo prompts are worded so a real model actually attempts the action being taught: a harmless email for the human to reject, an explicit file path to delete, a fake city (Hogwarts, Mordor) that the weather API can't find. With vaguer prompts a sensible model refuses or asks a follow-up question, and the harness feature never runs.
 - Demo 05 takes ~10 seconds because it waits on timeouts on purpose.
 - LangGraph's native `add_node(..., timeout=...)` only works for **async** nodes; demo 05 shows a thread-based timeout that works with plain sync code.

@@ -2,8 +2,10 @@ from langchain.agents import create_agent
 from langchain.tools import tool
 from dotenv import load_dotenv
 from langchain.mcp import MCPAdapter
+from fastmcp.client.transports import StreamableHttpTransport
 import requests
 import asyncio
+import os
 
 # load the env variables
 load_dotenv()
@@ -30,11 +32,16 @@ load_dotenv()
 #     current_weather = weather_output.json()
 #     return current_weather
 
-MY_MCP_URL = "http://127.0.0.1:8100/mcp"
+MY_MCP_URL = "http://127.0.0.1:9001/mcp"  # the server in ../my_mcp_server/mcp_server
+
+# the server rejects requests without the API key (401)
+transport = StreamableHttpTransport(
+    MY_MCP_URL, headers={"Authorization": f"Bearer {os.environ['MCP_API_KEY']}"}
+)
 
 
 async def main():
-    async with MCPAdapter(MY_MCP_URL) as adapter:
+    async with MCPAdapter(transport) as adapter:
         tools = await adapter.list_tools()
         weather_agent = create_agent(
             model="openai:gpt-6-sol",  # brain of the agent
