@@ -1,0 +1,10 @@
+[project]
+name = "my-mcp-server"
+version = "0.1.0"
+description = "A demo MCP server (weather, products, users) over Streamable HTTP"
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=2.3.0",
+    "python-dotenv>=1.2.4",
+]

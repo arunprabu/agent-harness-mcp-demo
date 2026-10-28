@@ -1,0 +1,16 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# API keys
+.env
+
+# AWS files written while following guides/04_DEPLOYMENT_GUIDE.md (they hold your account ID)
+mcp_server/deploy/

@@ -1,0 +1,10 @@
+[project]
+name = "langchain-client"
+version = "0.1.0"
+description = "A LangChain agent that uses the MCP server over Streamable HTTP"
+requires-python = ">=3.13"
+dependencies = [
+    "langchain-mcp-adapters>=0.3.2",
+    "langchain[openai]>=1.4.7",
+    "python-dotenv>=1.2.4",
+]

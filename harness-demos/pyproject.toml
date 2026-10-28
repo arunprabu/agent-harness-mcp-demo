@@ -1,0 +1,19 @@
+[project]
+name = "harness-demos"
+version = "0.1.0"
+description = "Step-by-step agent harness demos with LangGraph"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph>=1.0",
+    "langchain[openai]>=1.0",
+    "langchain-core>=1.0",
+    "langchain-openai>=1.0",
+    "langchain-tavily>=0.2",
+    "python-dotenv>=1.0",
+    "requests>=2.34.2",
+]
+
+[tool.uv]
+# Plain scripts, not an installable package.
+package = false

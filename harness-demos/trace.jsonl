@@ -1,0 +1,11 @@
+{"trace_id": "5eca3132", "span_id": "8e13e6", "kind": "node", "name": "agent", "status": "ok", "duration_ms": 0.98}
+{"trace_id": "5eca3132", "span_id": "f468a0", "kind": "tool", "name": "get_weather", "status": "ok", "duration_ms": 1596.0}
+{"trace_id": "5eca3132", "span_id": "334baf", "kind": "tool", "name": "calculator", "status": "ok", "duration_ms": 1.26}
+{"trace_id": "5eca3132", "span_id": "4f2ae1", "kind": "node", "name": "tools", "status": "ok", "duration_ms": 1598.26}
+{"trace_id": "5eca3132", "span_id": "28cc76", "kind": "node", "name": "agent", "status": "ok", "duration_ms": 0.16}
+{"trace_id": "5eca3132", "span_id": "5e1c66", "kind": "run", "name": "handle_request", "status": "ok", "duration_ms": 1605.3}
+{"trace_id": "43892515", "span_id": "c7e260", "kind": "node", "name": "agent", "status": "ok", "duration_ms": 0.22}
+{"trace_id": "43892515", "span_id": "4d8722", "kind": "tool", "name": "get_weather", "status": "error", "error": "No weather data for 'mordor': no such city found", "duration_ms": 878.04}
+{"trace_id": "43892515", "span_id": "8bf6e0", "kind": "node", "name": "tools", "status": "ok", "duration_ms": 878.4}
+{"trace_id": "43892515", "span_id": "3446b5", "kind": "node", "name": "agent", "status": "ok", "duration_ms": 0.18}
+{"trace_id": "43892515", "span_id": "a8d8c9", "kind": "run", "name": "handle_request", "status": "ok", "duration_ms": 882.48}

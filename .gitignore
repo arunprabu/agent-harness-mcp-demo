@@ -1,0 +1,21 @@
+# Secrets: real env files stay local; commit only .env.example templates
+.env
+.env.*
+!.env.example
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# macOS
+.DS_Store
+
+# AWS files written while following my_mcp_server/guides/04_DEPLOYMENT_GUIDE.md (they hold your account ID)
+my_mcp_server/mcp_server/deploy/

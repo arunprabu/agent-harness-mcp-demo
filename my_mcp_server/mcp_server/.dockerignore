@@ -1,0 +1,5 @@
+# Files Docker never sends to the build. .env holds secrets: the image must never contain it.
+.env
+.venv
+__pycache__
+deploy
